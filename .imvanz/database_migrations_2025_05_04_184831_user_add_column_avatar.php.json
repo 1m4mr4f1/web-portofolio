@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2025-05-04T18:49:25.616Z",
+    "fileName": "database\\migrations\\2025_05_04_184831_user_add_column_avatar.php",
+    "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     */\n    public function up(): void\n    {\n        Schema::table('users', function (Blueprint $table) {\n            $table->string('avatar')->nullable();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     */\n    public function down(): void\n    {\n        Schema::table('users', function (Blueprint $table) {\n            //\n        });\n    }\n};\n",
+    "format": "php"
+  },
+  {
+    "timestamp": "2025-05-04T19:02:03.286Z",
+    "fileName": "database\\migrations\\2025_05_04_184831_user_add_column_avatar.php",
+    "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     */\n    public function up(): void\n    {\n        Schema::table('users', function (Blueprint $table) {\n            $table->string('avatar')->nullable();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     */\n    public function down(): void\n    {\n        Schema::table('users', function (Blueprint $table) {\n            //\n        });\n    }\n};\n",
+    "format": "php"
+  }
+]

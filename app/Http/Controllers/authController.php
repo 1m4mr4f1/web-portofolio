@@ -24,6 +24,10 @@ class authController extends Controller
         $id = $user->id;
         $email = $user->email;
         $name = $user->name;
+        $avatar = $user->avatar;
+
+        echo $avatar;
+        exit();
 
         $cek = User::where('email', $email)->count();
         if($cek > 0) {
@@ -40,7 +44,11 @@ class authController extends Controller
         } else {
             return redirect() -> to('auth')->with('eror', 'akun yang anda gunakan tidak diizinkan untuk mengakses halaman ini');
         }
-
-
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()-> to ('auth');
+    }
+
 }
