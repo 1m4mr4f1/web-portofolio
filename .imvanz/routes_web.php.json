@@ -1,11 +1,5 @@
 [
   {
-    "timestamp": "2025-05-04T17:03:45.018Z",
-    "fileName": "routes\\web.php",
-    "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\Route;\nuse App\\Http\\Controllers\\authController;\nuse Laravel\\Socialite\\Facades\\Socialite;\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::get('/auth', [authController::class, \"index\"])->name('login')->middleware('guest');\n\nRoute::get('/auth/redirect', [authController::class, \"redirect\"])->middleware('guest');\n\nRoute::get('/auth/callback', [authController::class, \"callback\"])->middleware('guest');\n\nRoute::get('dashboard', function() {\n    return 'selamat '.Auth::user()->name.', anda masuk ke halaman dashboard';\n})\n->middleware('auth');\n",
-    "format": "php"
-  },
-  {
     "timestamp": "2025-05-04T17:04:50.609Z",
     "fileName": "routes\\web.php",
     "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\Route;\nuse App\\Http\\Controllers\\authController;\nuse Laravel\\Socialite\\Facades\\Socialite;\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::redirect('home','dashboard');\n\nRoute::get('/auth', [authController::class, \"index\"])->name('login')->middleware('guest');\n\nRoute::get('/auth/redirect', [authController::class, \"redirect\"])->middleware('guest');\n\nRoute::get('/auth/callback', [authController::class, \"callback\"])->middleware('guest');\n\nRoute::get('dashboard', function() {\n    return 'selamat '.Auth::user()->name.', anda masuk ke halaman dashboard';\n})\n->middleware('auth');\n",
@@ -25,6 +19,12 @@
   },
   {
     "timestamp": "2025-05-04T17:14:27.595Z",
+    "fileName": "routes\\web.php",
+    "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\Route;\nuse App\\Http\\Controllers\\authController;\nuse Laravel\\Socialite\\Facades\\Socialite;\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::redirect('home','dashboard');\n\nRoute::get('/auth', [authController::class, \"index\"])->name('login')->middleware('guest');\n\nRoute::get('/auth/redirect', [authController::class, \"redirect\"])->middleware('guest');\n\nRoute::get('/auth/callback', [authController::class, \"callback\"])->middleware('guest');\n\nRoute::get('/auth/logout',[authController::class,\"logout\"]);\n\nRoute::get('dashboard', function() {\n    return view('dashboard.index');\n})\n->middleware('auth');\n",
+    "format": "php"
+  },
+  {
+    "timestamp": "2025-05-06T21:38:02.880Z",
     "fileName": "routes\\web.php",
     "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\Route;\nuse App\\Http\\Controllers\\authController;\nuse Laravel\\Socialite\\Facades\\Socialite;\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::redirect('home','dashboard');\n\nRoute::get('/auth', [authController::class, \"index\"])->name('login')->middleware('guest');\n\nRoute::get('/auth/redirect', [authController::class, \"redirect\"])->middleware('guest');\n\nRoute::get('/auth/callback', [authController::class, \"callback\"])->middleware('guest');\n\nRoute::get('/auth/logout',[authController::class,\"logout\"]);\n\nRoute::get('dashboard', function() {\n    return view('dashboard.index');\n})\n->middleware('auth');\n",
     "format": "php"
